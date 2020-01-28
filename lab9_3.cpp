@@ -14,11 +14,11 @@ int main()
     while(getline(score,textnum))
     {
         sum+= atof(textnum.c_str());
+        x+= atof(textnum.c_str())*atof(textnum.c_str());
         i++;
     }
     mean=sum/i;
-    x=(sum*sum/i);
-    sd=sqrt(x-(mean*mean));
+    sd=sqrt((x/i)-(mean*mean));
     cout << "Number of data = "<<i<<"\n";
     cout << "Mean = "<<mean<<"\n";
     cout << "Standard deviation = "<<sd<<"\n";
