@@ -5,17 +5,18 @@ using namespace std;
 
 int main()
 {
-    ifstream cheerbook_copy;
-    cheerbook_copy.open("C:\\Users\\lab314-21\\Desktop\\lab9\\lab9-2562-2-Kitiyaparnnn\\cheerbook.txt");
+    ifstream cheerbook;
+    cheerbook.open("C:\\Users\\lab314-21\\Desktop\\lab9\\lab9-2562-2-Kitiyaparnnn\\cheerbook.txt");
     string name;
-    cout<<"-------------------- SOTUS ---------------------\n";
-    
-    while(getline(cheerbook_copy,name))
+    ofstream cheerbook_copy;
+    cheerbook_copy.open("cheerbook_copy.txt");
+    cheerbook_copy<<"-------------------- SOTUS ---------------------\n";
+    while(getline(cheerbook,name))
     {
-        cout<<name<<"\n";
+        cheerbook_copy<<name<<"\n";
     }
-
-    cout<<"-------------------- SOTUS ---------------------";
+    cheerbook_copy<<"-------------------- SOTUS ---------------------";
+    cheerbook.close();
     cheerbook_copy.close();
     return 0;
 }
